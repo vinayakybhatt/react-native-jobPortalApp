@@ -1,4 +1,3 @@
-import Train from "../../models/Train";
 export default [
   {
     id: 1,

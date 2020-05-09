@@ -32,7 +32,7 @@ const AuthStackScreen = () => (
     <AuthStack.Screen
       name='login'
       component={Login}
-      options={{ title: "Online Train Ticket Booking" }}
+      options={{ title: "Online Job Portal" }}
     />
   </AuthStack.Navigator>
 );
@@ -65,14 +65,14 @@ const HomeStackScreen = () => (
       name='searchBar'
       component={SearchBar}
       options={({ route }) => {
-        return { headerTitle: "Search Trains" }
+        return { headerTitle: "Search Jobs" }
       }}
     />
     <HomeStack.Screen 
       name="bookingForm"
       component={BookingForm}
       options={({ route }) => {
-        return { headerTitle: 'Apply for Ticket' }
+        return { headerTitle: 'Apply for Interview' }
       }}
     />
   </HomeStack.Navigator>
@@ -134,14 +134,14 @@ const TabNavigatorScreen = () => (
       name='home'
       component={HomeStackScreen}
       options={{
-        title: "Details",
+        title: "Jobs",
       }}
     />
     <TabNavigator.Screen
       name='booking'
       component={BookingStackScreen}
       options={{
-        title: "My Bookings",
+        title: "My Interview",
       }}
     />
   </TabNavigator.Navigator>

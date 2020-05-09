@@ -13,23 +13,16 @@ import Ticket from "../../components/UI/Ticket";
 import Card from "../../components/UI/Card";
 import Colors from "../../constants/colors";
 const SearchScreen = (props) => {
-  const [source, destination] = props.route.params.search.split("-");
+  const searchString = props.route.params.search.toLowerCase();
   const res = useSelector((state) => state.details.allDetails);
 
   const filterData = () => {
-    const s = source && source.toLowerCase();
-    const d = destination && destination.toLowerCase();
 
-    const filteredData = res.filter((train) => {
-      const hasSource = train.source.toLowerCase().includes(s);
-      const hasDestination = train.destination.toLowerCase().includes(d);
-      const midways = train.midways.map((midway) => midway.toLowerCase());
-
-      let hasMidway;
-      if (midways.includes(s) || midways.includes(d)) hasMidway = true;
-      else hasMidway = false;
-
-      if (hasSource || hasDestination || hasMidway) return true;
+    console.log(props.route.params.search, 'test', res)
+    const filteredData = res.filter((jobs) => {
+      const hasCompany = jobs.companyName.toLowerCase().includes(searchString);
+      const hasDesignation = jobs.designation.toLowerCase().includes(searchString);
+      if (hasCompany || hasDesignation ) return true;
       else return false;
     });
     return filteredData;
@@ -41,19 +34,19 @@ const SearchScreen = (props) => {
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View>
           {filter.length > 0 ? (
-            filter.map((train) => (
+            filter.map((jobs) => (
               <TouchableOpacity
                 activeOpacity={0.6}
-                key={train.id}
+                key={jobs.id}
                 style={styles.ticket}
                 onPress={() => {
                   props.navigation.navigate("info", {
-                    id: train.id,
-                    name: train.name,
+                    id: jobs.id,
+                    name: jobs.companyName,
                   });
                 }}
               >
-                <Ticket item={train} />
+                <Ticket item={jobs} />
               </TouchableOpacity>
             ))
           ) : (
