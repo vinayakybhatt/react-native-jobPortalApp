@@ -1,67 +1,68 @@
-import * as React from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
-import { SplashScreen } from 'expo';
-import * as Font from 'expo-font';
-import { Ionicons } from '@expo/vector-icons';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import React, { useState } from "react";
+import "react-native-gesture-handler"
+import { StyleSheet, Text, View } from "react-native";
+import { enableScreens } from "react-native-screens";
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import ReduxThunk from "redux-thunk"
+import Navigator from "./router/Navigator";
 
-import BottomTabNavigator from './navigation/BottomTabNavigator';
-import useLinking from './navigation/useLinking';
+import authReducer from "./store/reducers/auth";
+import detailsReducer from "./store/reducers/details";
 
-const Stack = createStackNavigator();
+import * as Font from "expo-font";
+import { AppLoading } from "expo";
 
-export default function App(props) {
-  const [isLoadingComplete, setLoadingComplete] = React.useState(false);
-  const [initialNavigationState, setInitialNavigationState] = React.useState();
-  const containerRef = React.useRef();
-  const { getInitialState } = useLinking(containerRef);
+enableScreens();
+const rootReducer = combineReducers({
+    auth: authReducer,
+    details: detailsReducer,
+});
+const store = createStore(
+    rootReducer, applyMiddleware(ReduxThunk)
+);
 
-  // Load any resources or data that we need prior to rendering the app
-  React.useEffect(() => {
-    async function loadResourcesAndDataAsync() {
-      try {
-        SplashScreen.preventAutoHide();
+const fetchFonts = () => {
+    return Font.loadAsync({
+        bebas: require("./assets/fonts/BebasNeue-Regular.ttf"),
+        "roboto-black": require("./assets/fonts/Roboto-Black.ttf"),
+        "roboto-bold": require("./assets/fonts/Roboto-Bold.ttf"),
+        "roboto-light": require("./assets/fonts/Roboto-Light.ttf"),
+        "roboto-italic": require("./assets/fonts/Roboto-Italic.ttf"),
+        roboto: require("./assets/fonts/Roboto-Regular.ttf"),
+    });
+};
 
-        // Load our initial navigation state
-        setInitialNavigationState(await getInitialState());
+export default function App() {
+    const [status, setStatus] = useState(false);
+    const [dataLoaded, setdataLoaded] = useState(false);
+    const toggleLogin = (val) => {
+        setStatus(val);
+    };
 
-        // Load fonts
-        await Font.loadAsync({
-          ...Ionicons.font,
-          'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
-        });
-      } catch (e) {
-        // We might want to provide this error information to an error reporting service
-        console.warn(e);
-      } finally {
-        setLoadingComplete(true);
-        SplashScreen.hide();
-      }
+    if (!dataLoaded) {
+        console.log("loading..");
+        return (
+            <AppLoading
+                startAsync={fetchFonts}
+                onFinish={() => {
+                    setdataLoaded(true);
+                }}
+                onError={(error) => {
+                    console.log(error);
+                }}
+            />
+        );
     }
-
-    loadResourcesAndDataAsync();
-  }, []);
-
-  if (!isLoadingComplete && !props.skipLoadingScreen) {
-    return null;
-  } else {
     return (
-      <View style={styles.container}>
-        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
-          <Stack.Navigator>
-            <Stack.Screen name="Root" component={BottomTabNavigator} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </View>
+        <Provider store={store}>
+          <Navigator />
+        </Provider>
     );
-  }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
+    screen: {
+        flex: 1,
+    },
 });

@@ -3,16 +3,13 @@ import { Alert, AsyncStorage } from "react-native";
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
 export const REGISTER = "REGISTER";
-import { API_KEY } from "../../env";
-
-const registerUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`;
-const loginUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`;
+import { API_KEY, REGISTERURL, LOGINURL } from "../../env";
 
 export const auth = (email, password, type) => {
   return async (dispatch) => {
     let url;
-    if (type === REGISTER) url = registerUrl;
-    else url = loginUrl;
+    if (type === REGISTER) url = REGISTERURL;
+    else url = LOGINURL;
     console.log(url);
     const res = await fetch(url, {
       method: "POST",
