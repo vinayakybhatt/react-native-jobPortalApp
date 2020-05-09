@@ -61,30 +61,25 @@ const Info = (props) => {
               <Text style={styles.owner}>
                 {selectedItem.companyName.toUpperCase()}
               </Text>
-              <Text style={styles.name}> {selectedItem.name} </Text>
+              <Text style={styles.name}> {selectedItem.location} </Text>
             </View>
             <View style={styles.location}>
               <Text style={styles.source}>
-                {selectedItem.source.toUpperCase()}
+                {selectedItem.designation.toUpperCase()}
               </Text>
               <Text style={styles.arrow}>
                 <FontAwesome name='long-arrow-right' size={36} />
               </Text>
               <Text style={styles.destination}>
-                {selectedItem.destination.toUpperCase()}
+                {selectedItem.type.toUpperCase()}
               </Text>
             </View>
             <View style={styles.priceWrapper}>
               <Text style={styles.price}>
-                {`€${selectedItem.price * item.qty}`}
+                {`${selectedItem.Experience}`}
               </Text>
             </View>
 
-            <View style={styles.incomingDetails}>
-              <Text style={styles.timings}> Timings </Text>
-              <Text style={styles.time}> {selectedItem.time} </Text>
-              <Text style={styles.date}> {selectedItem.date} </Text>
-            </View>
             <View style={styles.incomingDetails}>
               <Text style={styles.timings}> User Details </Text>
               <View style={styles.basicInfo}>
@@ -92,21 +87,11 @@ const Info = (props) => {
                 <Text style={styles.basicInfoEmail}> {email} </Text>
               </View>
               <View>
-                <Text> Seats: {item.qty} </Text>
+                <Text> Experience: {item.experience} Years</Text>
               </View>
               <View>
                 <Text> Govt Verified ID: {item.id} </Text>
               </View>
-            </View>
-            <Text style={styles.stationsGoTrough}>
-              Stations {selectedItem.name} go trough...
-            </Text>
-            <View style={styles.information}>
-              {selectedItem.midways.map((midway) => (
-                <TouchableOpacity activeOpacity={0.8} key={midway}>
-                  <Text style={styles.infoText}>{midway}</Text>
-                </TouchableOpacity>
-              ))}
             </View>
             <TouchableOpacity onPress={saveScreenshot}>
               <View style={styles.screenshotBtn}>

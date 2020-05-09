@@ -48,13 +48,13 @@ const Home = (props) => {
                   onPress={() => {
                     props.navigation.navigate("bookingInfo", {
                       item: booking.user,
-                      id: booking.train.id,
-                      name: booking.train.name,
-                      email: booking.email,
+                      id: booking.job.id,
+                      name: booking.job.name,
+                      email: booking.job.Experience,
                     });
                   }}
                 >
-                  <Ticket item={booking.train} qty={booking.user.qty} />
+                  <Ticket item={booking.job} qty={booking} />
                 </TouchableOpacity>
               );
             })}
