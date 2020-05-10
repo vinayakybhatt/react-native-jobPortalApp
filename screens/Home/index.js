@@ -16,7 +16,7 @@ import styles from "./styles";
 import Card from "../../components/UI/Card";
 import Btn from "../../components/UI/Btn";
 import Input from "../../components/UI/Input";
-import { Colors } from "react-native/Libraries/NewAppScreen";
+import  Colors  from "../../constants/colors";
 import Ticket from "../../components/UI/Ticket";
 
 const Home = (props) => {
@@ -54,6 +54,7 @@ const Home = (props) => {
       <View style={styles.screen}>
         <Input
           placeholder={"search:  location"}
+          placeholderTextColor={Colors.primary}
           style={styles.searchBar}
           onChangeText={(text) => setSearch(text)}
           value={search}
@@ -66,18 +67,21 @@ const Home = (props) => {
           <Text style={styles.btnText}> Search </Text>
         </TouchableOpacity>
       </View>
+      <View style={styles.mainView}>
       <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1 }}>
         {details && details.length > 0 ? details.map((item) => (
-          <TouchableOpacity
-            key={item.id}
-            activeOpacity={0.8}
-            style={styles.touchable}
-            onPress={() => renderInfo(item.id, item.companyName)}
-          >
-            <Ticket item={item} />
-          </TouchableOpacity>
-        )): null}
+
+              <TouchableOpacity
+                  key={item.id}
+                  activeOpacity={0.8}
+                  style={styles.touchable}
+                  onPress={() => renderInfo(item.id, item.companyName)}
+              >
+                <Ticket item={item} />
+              </TouchableOpacity>
+              )): null}
       </ScrollView>
+      </View>
     </SafeAreaView>
   );
 };

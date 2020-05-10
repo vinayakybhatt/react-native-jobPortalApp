@@ -41,9 +41,6 @@ const Info = (props) => {
               <Text style={styles.source}>
                 {selectedItem.designation.toUpperCase()}
               </Text>
-              <Text style={styles.arrow}>
-                <FontAwesome name='long-arrow-right' size={36} />
-              </Text>
               <Text style={styles.destination}>
                 {selectedItem.location.toUpperCase()}
               </Text>

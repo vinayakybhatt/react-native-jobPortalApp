@@ -14,7 +14,11 @@ import {
   TouchableHighlight,
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-
+import * as DocumentPicker from 'expo-document-picker';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 import { logout } from "../../store/actions/auth";
 import LocationPicker from "../../components/UI/LocationPicker";
 import Colors from "../../constants/colors";
@@ -40,7 +44,17 @@ const Profile = (props) => {
             <Text style={styles.text}>{ localId }</Text>
           </View>
         </View>
-        <LocationPicker navigate={props.navigation.navigate}/>
+        <View>
+          <TouchableOpacity
+          activeOpacity={0.8}
+          style={styles.importBtn}
+          onPress={() => {
+            DocumentPicker.getDocumentAsync()
+        }}
+          >
+          <Text  style={styles.importText}>  Import Resume </Text>
+        </TouchableOpacity>
+        </View>
         <TouchableOpacity
           activeOpacity={0.8}
           style={styles.logoutBtn}
@@ -91,14 +105,28 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 10,
     backgroundColor: Colors.primary,
-    
+
     width: Dimensions.get("screen").width,
+  },
+  importBtn:{
+    position: "absolute",
+    top: 20,
+    width:wp('33%'),
+    alignSelf: "center",
+    padding: 10,
+    backgroundColor: Colors.primary,
   },
   btnText: {
     color: Colors.light,
     fontFamily: 'roboto-black',
+    textAlign:'center',
     letterSpacing: 1
   },
+  importText:{
+    color: Colors.light,
+    fontFamily: 'roboto-black',
+    textAlign:'center',
+  }
 });
 
 export default Profile;

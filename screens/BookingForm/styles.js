@@ -7,6 +7,7 @@ import {
 export default StyleSheet.create({
   screen: {
     padding: 10,
+    backgroundColor: Colors.bgColor
   },
   form: {
     alignItems: "center",
@@ -38,6 +39,7 @@ export default StyleSheet.create({
     fontFamily: "bebas",
     fontSize: 24,
     color: Colors.light,
+    textAlign:'center',
     marginHorizontal: 5,
   }
 });

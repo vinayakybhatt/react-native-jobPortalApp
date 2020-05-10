@@ -1,5 +1,9 @@
 import { StyleSheet, Dimensions } from "react-native";
 import Colors from "../../constants/colors";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 export default StyleSheet.create({
   screen: {
     backgroundColor: '#fff'
@@ -10,7 +14,7 @@ export default StyleSheet.create({
     resizeMode: "cover",
   },
   itemView: {
-    backgroundColor: Colors.light,
+    backgroundColor: Colors.bgColor,
     padding: 20,
   },
   mainInfo: {
@@ -21,6 +25,7 @@ export default StyleSheet.create({
     flex: 1,
     fontFamily: "roboto-bold",
     fontSize: 24,
+    color:Colors.primary
   },
   name: {
     fontFamily: "roboto-light",
@@ -35,7 +40,7 @@ export default StyleSheet.create({
     flex: 1,
     fontSize: Dimensions.get('screen').fontScale * 20,
     fontFamily: "bebas",
-    color: Colors.primary,
+    color: Colors.dark,
     textAlign: "center",
   },
   arrow: {
@@ -47,7 +52,10 @@ export default StyleSheet.create({
     flex: 1,
     fontSize: Dimensions.get('screen').fontScale * 20,
     fontFamily: "bebas",
-    color: Colors.danger,
+    position:'relative',
+    left:wp('-52%'),
+    top:hp('4%'),
+    color: Colors.dark,
     textAlign: "center",
   },
   priceWrapper: {
@@ -83,7 +91,7 @@ export default StyleSheet.create({
   fab: {
     flexDirection: "row",
     height: 60,
-    width: 160,
+    width: wp('35%'),
     backgroundColor: Colors.primary,
     alignItems: "center",
     borderRadius: 30,
@@ -100,6 +108,7 @@ export default StyleSheet.create({
   fabText: {
     fontFamily: "bebas",
     fontSize: 24,
+    textAlign:'center',
     color: Colors.light,
     marginHorizontal: 5,
   },
@@ -107,23 +116,27 @@ export default StyleSheet.create({
     fontFamily: 'roboto-light'
   },
   incomingDetails: {
-    padding: 20,
-    borderRadius: 10,
-    backgroundColor: Colors.dkLight,
+    paddingTop: 20,
+    backgroundColor: Colors.bgColor,
     marginVertical: 10
   },
   timings:{
     fontFamily: 'roboto-bold',
+    color:Colors.primary,
     fontSize: 20
   },
   time: {
     fontSize: 18,
     fontFamily: 'roboto-light',
+    paddingLeft:wp('4%'),
+    color:Colors.dark,
     marginLeft: 20
   },
   date: {
     marginLeft: 20,
     fontFamily: 'roboto-light',
+    paddingLeft:wp('4.7%'),
+    color:Colors.dark,
     fontSize: 16
   }
 });

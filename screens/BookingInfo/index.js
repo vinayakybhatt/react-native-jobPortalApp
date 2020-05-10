@@ -53,6 +53,7 @@ const Info = (props) => {
 
   return (
     <SafeAreaView>
+      <View style={{backgroundColor:Colors.bgColor}}>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <ViewShot ref={viewShotRef} options={{ format: "jpg", quality: 0.9 }}>
           <Image style={styles.image} source={images[random]} />
@@ -101,8 +102,9 @@ const Info = (props) => {
           </View>
         </ViewShot>
       </ScrollView>
-    </SafeAreaView>
-  );
+      </View>
+      </SafeAreaView>
+);
 };
 
 export default Info;

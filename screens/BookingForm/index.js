@@ -53,7 +53,7 @@ const BookingForm = (props) => {
   };
 
   const fetchHandler = async () => {
-    
+
   };
 
   const bookingHandler = async () => {
@@ -122,7 +122,10 @@ const BookingForm = (props) => {
               />
               <Input
                 style={styles.input}
-                placeholder={"Govt. Issued ID Proof"}
+                placeholder={"Email"}
+                value={formState.email}
+                autoCapitalize={"none"}
+                autoCorrent={false}
                 onChangeText={(payload) => {
                   inputHandler({ key: "ID", payload });
                 }}
@@ -153,7 +156,7 @@ const BookingForm = (props) => {
                 bookingHandler();
               }}
             >
-              <Text style={styles.fabText}> Confirm Ticket </Text>
+              <Text style={styles.fabText}> Confirm InterView </Text>
             </TouchableOpacity>
           </View>
         </View>

@@ -33,7 +33,7 @@ const SearchScreen = (props) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <View>
+        <View style={styles.mainbg}>
           {filter.length > 0 ? (
             filter.map((jobs) => (
               <TouchableOpacity
@@ -69,6 +69,10 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     marginHorizontal: 20,
     padding: 20,
+  },
+  mainbg:{
+    backgroundColor:Colors.bgColor,
+    height:Dimensions.get('window').height
   },
   errorMessage: {
     color: Colors.danger,

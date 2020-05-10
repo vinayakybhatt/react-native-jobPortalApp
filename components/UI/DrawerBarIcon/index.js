@@ -8,7 +8,7 @@ const DrawerTabIcon = ({ route }) => (
   <TouchableOpacity onPress={() => route.navigation.toggleDrawer()}>
     <View style={{ paddingHorizontal: 20 }}>
       <Text>
-        <FontAwesome5 name='bars' color={Colors.dark} size={20} />
+        <FontAwesome5 name='bars' color={Colors.primary} size={20} />
       </Text>
     </View>
   </TouchableOpacity>

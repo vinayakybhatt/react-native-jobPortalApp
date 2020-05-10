@@ -27,7 +27,7 @@ const Ticket = (props) => {
           size={24}
         />
         <Text style={{ ...styles.grid, ...styles.destination }}>
-          {props.item.Experience} Years
+          {props.item.Experience} Years Exp
         </Text>
       </View>
       {/*<View style={styles.amountWrapper}>*/}
@@ -60,10 +60,9 @@ const styles = StyleSheet.create({
   items: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#f9f9f9",
+    backgroundColor: Colors.bgColor,
     height: 180,
     marginVertical: 10,
-    elevation: 2,
     borderRadius: 5,
     elevation:0
   },
@@ -76,30 +75,35 @@ const styles = StyleSheet.create({
   name: {
     fontSize: wp("6%"),
     fontFamily: "roboto-bold",
-    color: Colors.dark,
+    color: Colors.primary,
   },
   owner: {
     fontSize: wp("3%"),
     fontFamily: "roboto-light",
+    color: Colors.primary,
   },
   time: {
     fontSize: wp("5%"),
     fontFamily: "roboto-light",
+    color: Colors.primary,
   },
   date: {
     fontSize: wp("3%"),
     textAlign: "right",
     fontFamily: "roboto",
+    color: Colors.primary,
   },
   location: {
     flexDirection: "row",
     marginVertical: 10,
+    color: Colors.primary,
   },
   grid: {
     width: "33%",
     alignSelf: "center",
     justifyContent: "center",
     textAlign: "center",
+    left:wp('-1%'),
     fontFamily: "bebas",
     fontSize: wp("5%"),
   },
@@ -115,7 +119,10 @@ const styles = StyleSheet.create({
     color: Colors.primary,
   },
   destination: {
-    color: Colors.danger,
+    position:'absolute',
+    top:hp('6%'),
+    left:wp('-5%'),
+    color: Colors.primary,
   },
   arrowIcon: {
     color: Colors.dark,

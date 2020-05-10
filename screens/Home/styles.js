@@ -41,7 +41,7 @@ export default StyleSheet.create({
   searchBar: {
     flex: 1,
     fontSize: 14,
-    color: Colors.dark
+    color: Colors.primary
   },
   searchButton: {
     marginLeft: 30,
@@ -116,5 +116,10 @@ export default StyleSheet.create({
   midwayStation: {
     color: Colors.ltGray,
     fontFamily: 'roboto',
+  },
+  mainView:{
+    backgroundColor:Colors.bgColor,
+    flex:1,
+    height:Dimensions.get('window').height
   }
 });

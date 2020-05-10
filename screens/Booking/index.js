@@ -32,6 +32,7 @@ const Home = (props) => {
     loadBookings();
   }, [dispatch]);
   return (
+      <View style={{backgroundColor:Colors.bgColor}}>
     <SafeAreaView style={{ flex: 1 }}>
       {isLoading ? (
         <View style={styles.loading}>
@@ -61,6 +62,7 @@ const Home = (props) => {
         </ScrollView>
       )}
     </SafeAreaView>
+      </View>
   );
 };
 

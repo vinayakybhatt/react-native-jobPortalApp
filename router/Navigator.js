@@ -60,7 +60,7 @@ const HomeStackScreen = () => (
       name='home'
       component={Home}
       options={{
-        title: "All Details",
+        title: "All Jobs",
           headerStyle: {
               backgroundColor: Colors.bgColor,
           },
@@ -160,7 +160,17 @@ const ProfileStackScreen = () => (
     headerTitleAlign: 'center',
     headerRight: () => ( <DrawerBarIcon route={route} />)
   })}>
-    <ProfileStack.Screen name='profile' component={Profile} options={{ headerTitle: 'Profile' }}/>
+    <ProfileStack.Screen name='profile' component={Profile} options={{
+        headerTitle: 'Profile',
+        headerStyle: {
+            backgroundColor: Colors.bgColor,
+        },
+        headerTintColor:Colors.primary,
+        headerTitleStyle: {
+            fontWeight: 'bold',
+
+        }
+    }}/>
     <ProfileStack.Screen name='mapScreen' component={MapScreen} options={{
       headerTitle: 'Locate',
         headerStyle: {
