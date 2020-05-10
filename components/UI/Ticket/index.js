@@ -65,10 +65,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     elevation: 2,
     borderRadius: 5,
-    borderLeftColor: Colors.primary,
-    borderRightColor: Colors.danger,
-    borderLeftWidth: 5,
-    borderRightWidth: 5,
+    elevation:0
   },
   mainInfo: {
     flexDirection: "row",

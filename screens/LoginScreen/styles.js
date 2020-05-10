@@ -14,28 +14,33 @@ export default StyleSheet.create({
     width: wp("100%"),
     height: '30%',
     resizeMode: 'cover',
-    marginVertical: hp("2"),
   },
   container: {
     flex: 1,
     alignItems: "center",
+    backgroundColor:'#eceff1',
+    width:wp('100%')
   },
   title: {
     fontSize: 34,
+    paddingTop:hp('3%'),
+    color:Colors.primary,
     fontFamily: "bebas",
   },
   inputContainer: {
-    backgroundColor: '#f9f9f9',
+    backgroundColor: 'transparent',
+    elevation:0,
     marginVertical: hp("5%"),
   },
   buttonContainer: {
     alignItems: "center",
   },
   btn: {
-    width: wp("50%"),
+    marginTop:hp('2%'),
+    width: wp("56%"),
   },
   switcher: {
-    marginTop: 10,
+    marginTop: 15,
     padding: wp("2"),
     alignItems: "flex-end",
     flexDirection: "row",
@@ -49,6 +54,6 @@ export default StyleSheet.create({
   },
   textInput: {
     fontSize: 16,
-    color: Colors.ltGray
+    color: Colors.primary
   }
 });

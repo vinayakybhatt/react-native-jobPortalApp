@@ -32,7 +32,16 @@ const AuthStackScreen = () => (
     <AuthStack.Screen
       name='login'
       component={Login}
-      options={{ title: "Online Job Portal" }}
+      options={{
+          title: "Online Job Portal",
+          headerStyle: {
+              backgroundColor: Colors.bgColor,
+          },
+          headerTitleStyle: {
+              fontWeight: 'bold',
+              color: Colors.primary,
+          },
+      }}
     />
   </AuthStack.Navigator>
 );
@@ -51,28 +60,63 @@ const HomeStackScreen = () => (
       name='home'
       component={Home}
       options={{
-        title: "All Details"
+        title: "All Details",
+          headerStyle: {
+              backgroundColor: Colors.bgColor,
+          },
+          headerTintColor:Colors.primary,
+          headerTitleStyle: {
+              fontWeight: 'bold',
+
+          },
       }}
     />
     <HomeStack.Screen
       name='info'
       component={Info}
       options={({ route }) => {
-        return { headerTitle: route.params.name }
+        return { headerTitle: route.params.name ,
+            headerStyle: {
+                backgroundColor: Colors.bgColor,
+            },
+            headerTintColor:Colors.primary,
+            headerTitleStyle: {
+                fontWeight: 'bold',
+
+            },
+        }
       }}
     />
     <HomeStack.Screen
       name='searchBar'
       component={SearchBar}
       options={({ route }) => {
-        return { headerTitle: "Search Jobs" }
+        return { headerTitle: "Search Jobs",
+            headerStyle: {
+                backgroundColor: Colors.bgColor,
+            },
+            headerTintColor:Colors.primary,
+            headerTitleStyle: {
+                fontWeight: 'bold',
+
+            },
+        }
       }}
     />
-    <HomeStack.Screen 
+    <HomeStack.Screen
       name="bookingForm"
       component={BookingForm}
       options={({ route }) => {
-        return { headerTitle: 'Apply for Interview' }
+        return { headerTitle: 'Apply for Interview',
+            headerStyle: {
+                backgroundColor: Colors.bgColor,
+            },
+            headerTintColor:Colors.primary,
+            headerTitleStyle: {
+                fontWeight: 'bold',
+
+            },
+        }
       }}
     />
   </HomeStack.Navigator>
@@ -85,10 +129,27 @@ const BookingStackScreen = () => (
     headerRight: () => ( <DrawerBarIcon route={route}/>),
   })}>
     <BookingStack.Screen name='booking' component={Booking} options={{
-      title: "My Booking"
+      title: "My Interview",
+        headerStyle: {
+            backgroundColor: Colors.bgColor,
+        },
+        headerTintColor:Colors.primary,
+        headerTitleStyle: {
+            fontWeight: 'bold',
+
+        },
     }}/>
     <BookingStack.Screen name='bookingInfo' component={BookingInfo} options={({ route }) => {
-      return { headerTitle: route.params.name }
+      return { headerTitle: route.params.name,
+          headerStyle: {
+              backgroundColor: Colors.bgColor,
+          },
+          headerTintColor:Colors.primary,
+          headerTitleStyle: {
+              fontWeight: 'bold',
+
+          },
+      }
     }}/>
   </BookingStack.Navigator>
 );
@@ -101,7 +162,15 @@ const ProfileStackScreen = () => (
   })}>
     <ProfileStack.Screen name='profile' component={Profile} options={{ headerTitle: 'Profile' }}/>
     <ProfileStack.Screen name='mapScreen' component={MapScreen} options={{
-      headerTitle: 'Location'
+      headerTitle: 'Locate',
+        headerStyle: {
+            backgroundColor: Colors.bgColor,
+        },
+        headerTintColor:Colors.primary,
+        headerTitleStyle: {
+            fontWeight: 'bold',
+
+        },
     }}/>
   </ProfileStack.Navigator>
 );

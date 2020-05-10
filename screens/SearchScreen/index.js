@@ -22,7 +22,8 @@ const SearchScreen = (props) => {
     const filteredData = res.filter((jobs) => {
       const hasCompany = jobs.companyName.toLowerCase().includes(searchString);
       const hasDesignation = jobs.designation.toLowerCase().includes(searchString);
-      if (hasCompany || hasDesignation ) return true;
+      const hasLocation = jobs.location.toLowerCase().includes(searchString);
+      if (hasCompany || hasDesignation || hasLocation ) return true;
       else return false;
     });
     return filteredData;

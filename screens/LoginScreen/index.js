@@ -3,10 +3,7 @@ import {
   Image,
   View,
   Text,
-  TextInput,
   TouchableOpacity,
-  TouchableWithoutFeedback,
-  Keyboard,
   Alert,
   SafeAreaView,
   ScrollView,
@@ -19,7 +16,7 @@ import styles from "./styles";
 import Card from "../../components/UI/Card";
 import Input from "../../components/UI/Input";
 import Btn from "../../components/UI/Btn";
-import { Colors } from "react-native/Libraries/NewAppScreen";
+import  Colors  from "../../constants/colors";
 import { TouchableNativeFeedback } from "react-native-gesture-handler";
 
 const formReducer = (state, { type, key, payload }) => {
@@ -75,10 +72,10 @@ const LoginScreen = (props) => {
         <View style={styles.screen}>
           <Image
             style={styles.image}
-            source={require("../../assets/images/5228.jpg")}
+            source={require("../../assets/jobFindLogin.png")}
           />
           <View style={styles.container}>
-            <Text style={styles.title}>{ screen ? 'LOGIN' : 'REGISTER' }</Text>
+            {/*<Text style={styles.title}>{ screen ? 'LOGIN' : 'REGISTER' }</Text>*/}
             <Card style={styles.inputContainer}>
               <Input
                 keyboardType={"email-address"}
@@ -87,6 +84,7 @@ const LoginScreen = (props) => {
                 autoCapitalize={"none"}
                 autoCorrent={false}
                 placeholder={"Email"}
+                placeholderTextColor={Colors.primary}
                 style={styles.textInput}
                 returnKeyType='next'
               />
@@ -96,6 +94,7 @@ const LoginScreen = (props) => {
                 placeholder={"Password"}
                 style={styles.textInput}
                 secureTextEntry={true}
+                placeholderTextColor={Colors.primary}
                 returnKeyType='done'
               />
               <View style={styles.buttonContainer}>
@@ -129,7 +128,7 @@ const LoginScreen = (props) => {
                 }}
               >
                 <Text style={styles.tag}>
-                  {screen ? "Need an account?" : "Have an account?"}
+                  {screen ? "Looking for a job?" : "Already a seeker?"}
                 </Text>
                 <Text style={{ ...styles.tag, ...styles.tagSwitcher }}>
                   {screen ? "Register Here" : "Login Here"}

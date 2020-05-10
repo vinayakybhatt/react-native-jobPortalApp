@@ -53,7 +53,7 @@ const Home = (props) => {
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.screen}>
         <Input
-          placeholder={"search:  designation"}
+          placeholder={"search:  location"}
           style={styles.searchBar}
           onChangeText={(text) => setSearch(text)}
           value={search}
