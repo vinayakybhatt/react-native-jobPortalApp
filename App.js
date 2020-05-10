@@ -21,7 +21,7 @@ const rootReducer = combineReducers({
 const store = createStore(
     rootReducer, applyMiddleware(ReduxThunk)
 );
-
+console.reportErrorsAsExceptions = false;
 const fetchFonts = () => {
     return Font.loadAsync({
         bebas: require("./assets/fonts/BebasNeue-Regular.ttf"),
