@@ -80,30 +80,27 @@ const styles = StyleSheet.create({
   owner: {
     fontSize: wp("3%"),
     fontFamily: "roboto-light",
-    color: Colors.primary,
+    color: Colors.dark,
   },
   time: {
     fontSize: wp("5%"),
     fontFamily: "roboto-light",
-    color: Colors.primary,
+    color: Colors.dark,
   },
   date: {
     fontSize: wp("3%"),
     textAlign: "right",
     fontFamily: "roboto",
-    color: Colors.primary,
   },
   location: {
     flexDirection: "row",
     marginVertical: 10,
-    color: Colors.primary,
   },
   grid: {
     width: "33%",
     alignSelf: "center",
     justifyContent: "center",
-    textAlign: "center",
-    left:wp('-1%'),
+    textAlign: "left",
     fontFamily: "bebas",
     fontSize: wp("5%"),
   },
@@ -113,7 +110,6 @@ const styles = StyleSheet.create({
   amount: {
     fontFamily: "bebas",
     fontSize: wp("7%"),
-    color: Colors.primary,
   },
   source: {
     color: Colors.primary,
@@ -121,8 +117,7 @@ const styles = StyleSheet.create({
   destination: {
     position:'absolute',
     top:hp('6%'),
-    left:wp('-5%'),
-    color: Colors.primary,
+    color: Colors.dark,
   },
   arrowIcon: {
     color: Colors.dark,
