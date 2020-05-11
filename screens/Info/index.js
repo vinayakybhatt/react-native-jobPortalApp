@@ -39,10 +39,10 @@ const Info = (props) => {
             </View>
             <View style={styles.location}>
               <Text style={styles.source}>
-                {selectedItem.designation.toUpperCase()}
+                Profile: {selectedItem.designation.toUpperCase()}
               </Text>
               <Text style={styles.destination}>
-                {selectedItem.location.toUpperCase()}
+                Location: {selectedItem.location.toUpperCase()}
               </Text>
             </View>
 
