@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet,Image} from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import Colors from "../../../constants/colors";
 import {
@@ -10,6 +10,10 @@ const Ticket = (props) => {
   return (
     <View style={{ ...styles.items, ...props.style }}>
       <View style={styles.mainInfo}>
+        <Image
+            style={styles.image}
+            source={props.item.logoUrl}
+        />
         <View style={styles.info}>
           <Text style={styles.name}>{props.item.companyName}</Text>
           <Text style={styles.owner}>{props.item.type}</Text>
@@ -29,6 +33,7 @@ const Ticket = (props) => {
         <Text style={{ ...styles.grid, ...styles.destination }}>
           {props.item.Experience} Years Exp
         </Text>
+        <Text style={styles.amount}>Expected Salary: {`${props.item.package}`}</Text>
       </View>
       {/*<View style={styles.amountWrapper}>*/}
         {/*{props.qty ? (*/}

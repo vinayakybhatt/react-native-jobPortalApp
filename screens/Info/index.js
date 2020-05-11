@@ -29,7 +29,7 @@ const Info = (props) => {
         <View style={styles.screen}>
           <Image
             style={styles.image}
-            source={images[random]}
+            source={selectedItem.logoUrl}
           />
           <View style={styles.itemView}>
             <View style={styles.mainInfo}>
@@ -43,6 +43,9 @@ const Info = (props) => {
               </Text>
               <Text style={styles.destination}>
                 Location: {selectedItem.location.toUpperCase()}
+              </Text>
+              <Text style={styles.destination}>
+                Expected Salary: {selectedItem.package}
               </Text>
             </View>
 
