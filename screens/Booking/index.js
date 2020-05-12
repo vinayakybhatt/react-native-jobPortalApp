@@ -51,7 +51,7 @@ const Home = (props) => {
                       item: booking.user,
                       id: booking.job.id,
                       name: booking.job.name,
-                      email: booking.job.Experience,
+                      email: booking.job.experience,
                     });
                   }}
                 >

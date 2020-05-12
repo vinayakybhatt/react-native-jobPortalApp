@@ -77,7 +77,7 @@ const Info = (props) => {
             </View>
             <View style={styles.priceWrapper}>
               <Text style={styles.price}>
-                {`${selectedItem.Experience}`}
+                {`${selectedItem.experience}`}
               </Text>
             </View>
 

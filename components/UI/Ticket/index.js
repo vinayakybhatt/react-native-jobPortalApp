@@ -31,7 +31,7 @@ const Ticket = (props) => {
           size={24}
         />
         <Text style={{ ...styles.grid, ...styles.destination }}>
-          {props.item.Experience} Years Exp
+          {props.item.experience} Years Exp
         </Text>
         <Text style={styles.amount}>Expected Salary: {`${props.item.package}`}</Text>
       </View>

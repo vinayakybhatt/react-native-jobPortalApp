@@ -51,7 +51,7 @@ const Info = (props) => {
 
             <View style={styles.incomingDetails}>
               <Text style={styles.timings}> Experience and TYPE</Text>
-              <Text style={styles.time}> { selectedItem.Experience } Years</Text>
+              <Text style={styles.time}> { selectedItem.experience } Years</Text>
               <Text style={styles.date}> { selectedItem.type }  </Text>
             </View>
             <View style={styles.fabButton}>
