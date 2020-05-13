@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import "react-native-gesture-handler"
-import {StyleSheet, Text, View} from "react-native";
 import {enableScreens} from "react-native-screens";
 import {createStore, combineReducers, applyMiddleware} from "redux";
 import {Provider} from "react-redux";
@@ -34,11 +33,8 @@ const fetchFonts = () => {
 };
 
 export default function App() {
-    const [status, setStatus] = useState(false);
     const [dataLoaded, setdataLoaded] = useState(false);
-    const toggleLogin = (val) => {
-        setStatus(val);
-    };
+
 
     if (!dataLoaded) {
         console.log("loading..");
@@ -60,9 +56,3 @@ export default function App() {
         </Provider>
     );
 }
-
-const styles = StyleSheet.create({
-    screen: {
-        flex: 1,
-    },
-});
