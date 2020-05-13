@@ -13,14 +13,14 @@ const { v4 } = require("uuid");
 
 const generator = async (details) => {
     try {
-        const { data } = await axios.post("https://react-native-jobportalbackend.firebaseio.com/jobs.json", details)
+        const { data } = await axios.post("https://react-native-jobportalbackend.firebaseio.com/jobs.json", details);
         console.log(data)
     } catch (e) {
         console.log (`e -> ${e.message}`)
     }
-}
+};
 
-generator(data)
+generator(data);
 
 // const getDetails = async () => {
 //     try {

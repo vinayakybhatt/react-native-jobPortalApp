@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import "react-native-gesture-handler"
-import { StyleSheet, Text, View } from "react-native";
-import { enableScreens } from "react-native-screens";
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import { Provider } from "react-redux";
+import {StyleSheet, Text, View} from "react-native";
+import {enableScreens} from "react-native-screens";
+import {createStore, combineReducers, applyMiddleware} from "redux";
+import {Provider} from "react-redux";
 import ReduxThunk from "redux-thunk"
 import Navigator from "./router/Navigator";
 
@@ -11,7 +11,7 @@ import authReducer from "./store/reducers/auth";
 import detailsReducer from "./store/reducers/details";
 
 import * as Font from "expo-font";
-import { AppLoading } from "expo";
+import {AppLoading} from "expo";
 
 enableScreens();
 const rootReducer = combineReducers({
@@ -56,7 +56,7 @@ export default function App() {
     }
     return (
         <Provider store={store}>
-          <Navigator />
+            <Navigator/>
         </Provider>
     );
 }
