@@ -11,13 +11,11 @@ import {
 import { useDispatch } from "react-redux";
 import { auth } from "../../store/actions/auth";
 import { LOGIN, REGISTER } from "../../store/actions/auth";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import styles from "./styles";
 import Card from "../../components/UI/Card";
 import Input from "../../components/UI/Input";
 import Btn from "../../components/UI/Btn";
 import  Colors  from "../../constants/colors";
-import { TouchableNativeFeedback } from "react-native-gesture-handler";
 
 const formReducer = (state, { type, key, payload }) => {
   switch (type) {
@@ -49,7 +47,6 @@ const LoginScreen = (props) => {
   };
 
   const authHandler = async (type) => {
-    console.log("calling", type);
     if (formState.email && formState.password) {
       let event;
       if (type === LOGIN) event = LOGIN;

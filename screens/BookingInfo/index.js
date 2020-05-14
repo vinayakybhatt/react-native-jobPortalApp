@@ -7,9 +7,6 @@ import {
   SafeAreaView,
   Image,
   TouchableOpacity,
-  TouchableHighlight,
-  Platform,
-  TouchableNativeFeedback,
   Alert
 } from "react-native";
 import { useSelector } from "react-redux";
@@ -29,16 +26,11 @@ const Info = (props) => {
 
   const selectedItem = details.find((item) => item.id === id);
   const random = Math.floor(Math.random() * images.length - 1 + 1);
-  const viewShotRef = useRef()
+  const viewShotRef = useRef();
   const saveScreenshot = async () => {
     viewShotRef.current.capture().then(uri => {
-      const imgName = uri.split('/').pop()
-      const newPath = FileSystem.documentDirectory + imgName
-      console.log({
-        imgName,
-        uri,
-        newPath
-      })
+      const imgName = uri.split('/').pop();
+      const newPath = FileSystem.documentDirectory + imgName;
       FileSystem.moveAsync({
         from: uri,
         to: newPath

@@ -17,8 +17,6 @@ const SearchScreen = (props) => {
   const res = useSelector((state) => state.details.allDetails);
 
   const filterData = () => {
-
-    console.log(props.route.params.search, 'test', res)
     const filteredData = res.filter((jobs) => {
       const hasCompany = jobs.companyName.toLowerCase().includes(searchString);
       const hasDesignation = jobs.designation.toLowerCase().includes(searchString);

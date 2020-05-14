@@ -1,16 +1,15 @@
 import React from "react";
-import { Alert, AsyncStorage } from "react-native";
+import { AsyncStorage } from "react-native";
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
 export const REGISTER = "REGISTER";
-import { API_KEY, REGISTERURL, LOGINURL } from "../../env";
+import { REGISTERURL, LOGINURL } from "../../env";
 
 export const auth = (email, password, type) => {
   return async (dispatch) => {
     let url;
     if (type === REGISTER) url = REGISTERURL;
     else url = LOGINURL;
-    console.log(url);
     const res = await fetch(url, {
       method: "POST",
       headers: {
@@ -28,7 +27,6 @@ export const auth = (email, password, type) => {
     }
     await AsyncStorage.setItem('@localId', response.localId);
     // await AsyncStorage.setItem('@token', response.localId)
-    console.log(response);
     dispatch({
       type,
       payload: response,

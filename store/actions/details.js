@@ -12,7 +12,6 @@ export const fetchDetails = () => {
 
     const details = [];
     for (let i = 0; i < data.length; i++) details.push(data[i][1]);
-    console.log({details},'###');
     dispatch({
       type: SET_DETAILS,
       details,
@@ -28,7 +27,6 @@ export const fetchMyBookings = () => {
 
     const details = [];
     for (let i=0; i < data.length; i++) details.push(data[i][1]);
-    console.log({details}, 'booking');
     const localId = await AsyncStorage.getItem('@localId');
     const myBookings = details.filter(bookings => bookings.localId === localId);
     
