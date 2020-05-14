@@ -8,4 +8,4 @@ Step2: Run npm i <br/>
 Step3: Create a firebase project and databse which can be integrated as the backend<br/>
 Step4: Change the src/env.js file with the corresponding keys<br/>
 step5: Run npm start <br/>
-step6: install expo app on your phone and scan the qr code to see the workinig app.<br/>
+step6: Install expo app on your phone and scan the qr code to see the workinig app.<br/>
