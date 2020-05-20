@@ -35,28 +35,6 @@ const Ticket = (props) => {
         </Text>
         <Text style={styles.amount}>Expected Salary: {`${props.item.package}`}</Text>
       </View>
-      {/*<View style={styles.amountWrapper}>*/}
-        {/*{props.qty ? (*/}
-          {/*<Text style={styles.amount}>{`€${*/}
-            {/*props.item.price * props.qty*/}
-          {/*}`}</Text>*/}
-        {/*) : (*/}
-          {/*<Text style={styles.amount}>{`€${props.item.price}`}</Text>*/}
-        {/*)}*/}
-      {/*</View>*/}
-      { /*<View style={styles.stations}>
-        <Text style={styles.midwayStation}>Stations:[</Text>
-        {props.item.midways.map((midway, index) => {
-          if (index < 2) {
-            return (
-              <Text style={styles.midway} key={midway}>
-                {midway},
-              </Text>
-            );
-          }
-        })}
-        <Text style={styles.midwayStation}>... ] </Text>
-      </View> */ }
     </View>
   );
 };
