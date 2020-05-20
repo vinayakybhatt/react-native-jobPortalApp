@@ -7,11 +7,8 @@ import {
   TouchableOpacity,
   Alert,
 } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
-import Colors from "../../constants/colors";
 import styles from "./styles";
 import Input from "../../components/UI/Input";
-import Card from "../../components/UI/Card";
 import Ticket from "../../components/UI/Ticket";
 import { BOOKING } from "../../env";
 import { fetchMyBookings } from "../../store/actions/details";
@@ -52,9 +49,6 @@ const BookingForm = (props) => {
     });
   };
 
-  const fetchHandler = async () => {
-
-  };
 
   const bookingHandler = async () => {
     if (
