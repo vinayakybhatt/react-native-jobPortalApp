@@ -6,23 +6,14 @@ import {
   SafeAreaView,
   Image,
   TouchableOpacity,
-  TouchableHighlight
 } from "react-native";
 import { useSelector } from "react-redux";
-import { FontAwesome } from "@expo/vector-icons";
 import styles from "./styles";
-import { Colors } from "react-native/Libraries/NewAppScreen";
-const images = [
-  require("../../assets/images/0.jpg"),
-  require("../../assets/images/1.jpg"),
-  require("../../assets/images/2.jpg"),
-  require("../../assets/images/3.jpg")
-]
+
 const Info = (props) => {
   const details = useSelector((state) => state.details.allDetails);
   const { id } = props.route.params;
   const selectedItem = details.find((item) => item.id === id);
-  const random = Math.floor((Math.random() * images.length - 1) + 1)
   return (
     <SafeAreaView>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
