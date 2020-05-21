@@ -2,18 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   View,
-  Text,
   TouchableOpacity,
   SafeAreaView,
-  FlatList,
   ScrollView,
   ActivityIndicator,
 } from "react-native";
-import { Entypo } from "@expo/vector-icons";
 import { fetchMyBookings } from "../../store/actions/details";
 import styles from "./styles";
 import Colors from "../../constants/colors";
-import Card from "../../components/UI/Card";
 import Ticket from "../../components/UI/Ticket";
 const Home = (props) => {
   const [isLoading, setisLoading] = useState(false);
