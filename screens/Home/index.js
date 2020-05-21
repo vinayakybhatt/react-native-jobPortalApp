@@ -4,17 +4,12 @@ import {
   Text,
   TouchableOpacity,
   SafeAreaView,
-  FlatList,
   ScrollView,
-  Button,
   ActivityIndicator,
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-import { FontAwesome } from "@expo/vector-icons";
 import { fetchDetails } from "../../store/actions/details";
 import styles from "./styles";
-import Card from "../../components/UI/Card";
-import Btn from "../../components/UI/Btn";
 import Input from "../../components/UI/Input";
 import  Colors  from "../../constants/colors";
 import Ticket from "../../components/UI/Ticket";
