@@ -4,27 +4,19 @@ import {
   TouchableOpacity,
   Text,
   StyleSheet,
-  Button,
   Image,
-  Alert,
-  ActivityIndicator,
   Dimensions,
   SafeAreaView,
-  ScrollView,
-  TouchableHighlight,
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import * as DocumentPicker from 'expo-document-picker';
 import {
   widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { logout } from "../../store/actions/auth";
-import LocationPicker from "../../components/UI/LocationPicker";
 import Colors from "../../constants/colors";
 
-const Profile = (props) => {
-  const getParams = props.route.params
+const Profile = () => {
   const dispatch = useDispatch();
   const { email, localId } = useSelector((state) => state.auth.user);
   return (
