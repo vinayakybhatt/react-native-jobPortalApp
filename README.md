@@ -1,6 +1,6 @@
 # react-native-jobPortalApp
 Job Portal designed on react-native as frontend and firebase as backend.
-This is an app which serves as job portal 
+This is an app which will serve as job portal 
 It fetches data from firebase database and displays it and posts the data back to it.
 
 Step1: Clone this Repo locally <br/>
