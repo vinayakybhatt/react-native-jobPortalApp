@@ -5,7 +5,7 @@ It fetches data from firebase database and displays it and posts the data back t
 Consider it as boiler plate for the portal and just integrate the backend and you are ready to go <br/>
 Fill in the env.js with the details of your firebase database and you are good to go.<br/>
 
-To run it locally,
+To run it locally,<br/>
 Step1: Clone this Repo locally <br/>
 Step2: Run npm i <br/>
 Step3: Create a firebase project and databse which can be integrated as the backend<br/>
